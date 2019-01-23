@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+
+
+version = '1.0.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'kafka4test'
+    version = '1.0.0'
+    manifest {
+        attributes(
+                'Main-Class': 'golan.izik.kafka.producer.msgcount.MsgCountIngest',
+        )
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+}
+
+
+dependencies {
+    compile "org.projectlombok:lombok:1.18.4"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.9.8"
+    compile "com.fasterxml.jackson.core:jackson-core:2.9.8"
+    testCompile "junit:junit:4.11"
+    compile "log4j:log4j:1.2.15"
+    compile "net.sf.jopt-simple:jopt-simple:3.2"
+    compile "org.scala-lang:scala-compiler:2.11.8"
+    compile "com.101tec:zkclient:0.8"
+    compile "com.yammer.metrics:metrics-core:2.2.0"
+    compile "com.yammer.metrics:metrics-annotation:2.2.0"
+    testCompile "org.easymock:easymock:3.0"
+    compile "org.apache.kafka:kafka_2.12:0.10.2.1"
+    compile "org.apache.kafka:kafka-clients:0.10.2.1"
+    compile "org.slf4j:slf4j-api:1.7.5"
+    compile "org.slf4j:slf4j-log4j12:1.7.5"
+    compile "commons-cli:commons-cli:1.2"
+}
