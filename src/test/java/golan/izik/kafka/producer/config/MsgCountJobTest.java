@@ -14,6 +14,8 @@ public class MsgCountJobTest {
     @Test
     public void jacksonTest() throws IOException {
         final MsgCountJob obj1 = createFromScratch();
+        ObjectMapper mapper = new ObjectMapper();
+        System.out.println(mapper.writeValueAsString(obj1));
         final Object obj2 = createFromString(new ObjectMapper().writer().writeValueAsString(obj1));
         assert(obj1.equals(obj2));
     }

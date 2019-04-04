@@ -40,7 +40,7 @@ class BulkProducer {
             ZonedDateTime dt = bulk.getFrom();
             while (dt.isBefore(bulk.getTo())) {
                 for (int objectIndex = 0 ; objectIndex<bulk.getDevices() ; objectIndex++) {
-                    final String objectId = "" + objectIndex;
+                    final String objectId = "" + String.format("%03d", objectIndex);
                     producer.send(new ProducerRecord<>(conf.getTopic(), objectId, message(dt, objectId)));
                 }
                 dt = dt.plus(secondsBetweenMessages, ChronoUnit.SECONDS);

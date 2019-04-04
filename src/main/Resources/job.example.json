@@ -1,0 +1,18 @@
+{
+  "bulks": [
+    {
+      "from": "2018-01-01 12:00:00",
+      "to": "2018-01-01 13:00:00",
+      "messages": 60,
+      "devices": 3,
+      "devicePrefix": "device_"
+    },
+    {
+      "from": "2018-01-02 12:00:00",
+      "to": "2018-01-02 13:00:00",
+      "messages": 10,
+      "devices": 12,
+      "devicePrefix": "device_"
+    }
+  ]
+}
