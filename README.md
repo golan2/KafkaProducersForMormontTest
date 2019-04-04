@@ -7,7 +7,7 @@ You define the time perido and how many objects as well as how many messages for
 See below the JobFile for more info.
 
 ## Arguments:
-Follwing arguments need to be provided when running the java program:
+Following arguments need to be provided when running the java program:
 
  - `bootstrap.servers`    (for Kafka)
  - `topic`                (for Kafka)
